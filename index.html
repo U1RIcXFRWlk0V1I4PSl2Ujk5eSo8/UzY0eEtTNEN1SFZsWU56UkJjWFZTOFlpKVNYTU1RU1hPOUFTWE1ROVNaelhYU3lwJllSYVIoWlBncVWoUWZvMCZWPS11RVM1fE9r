@@ -1,29 +1,13 @@
-<py-script>
-  
-print("update")
-#python script begins from here
-internalCount = 0
-target = "counter-target"
-PyScript.write(target, str(internalCount), append=False)
-
-def add_one():
-    global internalCount
-    internalCount += 1
-    PyScript.write(target, str(internalCount), append=False)
-  
-  
-</py-script>
 <html>
   <head>
-    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
-    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
-  </head>
-  <body>
-    <p id="counter-target">Some Placeholder Text</p>
-    <py-button>
-      def on_click(event):
-          print(event)
-          add_one()
-    </py-button>
+    <button type="button" id="button">run Python</button>
+    <py-script>
+    from js import document
+    from pyodide import create_proxy
+    def runPython():
+        print("you clicked me")
+    function_proxy = create_proxy(runPython)
+    document.getElementById("button").addEventListener("click", function_proxy)
+    </py-script>
   </body>
 </html>
