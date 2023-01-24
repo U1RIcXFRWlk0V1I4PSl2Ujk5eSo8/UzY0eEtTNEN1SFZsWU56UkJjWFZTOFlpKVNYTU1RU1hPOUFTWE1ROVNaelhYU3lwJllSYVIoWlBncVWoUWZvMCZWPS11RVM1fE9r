@@ -4,16 +4,19 @@
     <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
   </head>
   <body>
+    <py-button>
+      def on_click(event):
+              add_one()
+    </py-button>
     <py-script>
-      import time as t
-      t.sleep(3)
-      print("Online Calculator v1.0")
-      while True:
-          print("Input a number 1")
-          a = int(input())
-          print("Input a number 2")
-          b = int(input())
-          print(a+b)
+      internalCount = 0
+      target = "counter-target"
+      PyScript.write(target, str(internalCount), append=False)
+
+      def add_one():
+          global internalCount
+          internalCount += 1
+          PyScript.write(target, str(internalCount), append=False)
     </py-script>
   </body>
 </html>
