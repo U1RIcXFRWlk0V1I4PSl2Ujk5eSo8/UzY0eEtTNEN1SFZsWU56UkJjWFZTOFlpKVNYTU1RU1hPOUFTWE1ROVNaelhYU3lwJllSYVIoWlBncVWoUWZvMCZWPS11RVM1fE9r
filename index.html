@@ -1,14 +1,11 @@
 <html>
-    <head>
-        <script>
-        var opened = window.open("");
-        opened.document.write("<html><head><title>MyTitle</title></head><body>test</body></html>");
-        </script>
-        <title>PHP Test</title>
-    </head>
-    <body>
-    <?php echo '<p>Hello World</p>'; ?>
-    <?php $fin = fopen (phpstdin,r); ?>
-    <?php $line = fgets($fin); ?>
-    </body>
+  <head>
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+  </head>
+  <body>
+    <py-script>
+      print("Hello World")
+    </py-script>
+  </body>
 </html>
