@@ -18,13 +18,19 @@
       id2 = 0
       id3 = 0
 
-      def runPython( event , var ):
-          exec(f"{var} += 1")
-          document.getElementById("show") = var
-      document.getElementById("1").addEventListener("click", create_proxy(runPython("id0")))
-      document.getElementById("2").addEventListener("click", create_proxy(runPython("id1")))
-      document.getElementById("3").addEventListener("click", create_proxy(runPython("id2")))
-      document.getElementById("4").addEventListener("click", create_proxy(runPython("id3")))
+      def id0( event ):
+          document.getElementById("show") = "ch1"
+      def id1( event ):
+          document.getElementById("show") = "ch2"
+      def id2( event ):
+          document.getElementById("show") = "ch3"
+      def id3( event ):
+          document.getElementById("show") = "ch4"
+      
+      document.getElementById("1").addEventListener("click", create_proxy(runPython()))
+      document.getElementById("2").addEventListener("click", create_proxy(runPython()))
+      document.getElementById("3").addEventListener("click", create_proxy(runPython()))
+      document.getElementById("4").addEventListener("click", create_proxy(runPython()))
 
     </py-script>
   </body>
