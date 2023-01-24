@@ -5,14 +5,27 @@
   <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
   <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
   <head>
-    <button type="button" id="button">run Python</button>
-    <py-script>
-    from js import document
-    from pyodide import create_proxy
-    def runPython():
-        print("you clicked me")
-    function_proxy = create_proxy(runPython)
-    document.getElementById("button").addEventListener("click", function_proxy)
+      <button id="1">CHOICE 1</button>
+      <button id="2">CHOICE 2</button>
+      <button id="3">CHOICE 3</button>
+      <button id="4">CHOICE 4</button>
+      <div id="show">nothing pressed</div>
+      <py-script>
+      from js import document
+      from pyodide import create_proxy
+      id0 = 0
+      id1 = 0
+      id2 = 0
+      id3 = 0
+
+      def runPython( event , var ):
+          exec(f"{var} += 1")
+          document.getElementById("show") = var
+      document.getElementById("1").addEventListener("click", create_proxy(runPython("id0")))
+      document.getElementById("2").addEventListener("click", create_proxy(runPython("id1")))
+      document.getElementById("3").addEventListener("click", create_proxy(runPython("id2")))
+      document.getElementById("4").addEventListener("click", create_proxy(runPython("id3")))
+
     </py-script>
   </body>
 </html>
