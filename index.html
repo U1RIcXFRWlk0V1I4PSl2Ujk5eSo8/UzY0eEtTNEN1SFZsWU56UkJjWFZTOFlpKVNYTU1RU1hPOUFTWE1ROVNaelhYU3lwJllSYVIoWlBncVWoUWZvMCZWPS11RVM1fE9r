@@ -1,0 +1,14 @@
+<html>
+    <head>
+        <script>
+        var opened = window.open("");
+        opened.document.write("<html><head><title>MyTitle</title></head><body>test</body></html>");
+        </script>
+        <title>PHP Test</title>
+    </head>
+    <body>
+    <?php echo '<p>Hello World</p>'; ?>
+    <?php $fin = fopen (phpstdin,r); ?>
+    <?php $line = fgets($fin); ?>
+    </body>
+</html>
