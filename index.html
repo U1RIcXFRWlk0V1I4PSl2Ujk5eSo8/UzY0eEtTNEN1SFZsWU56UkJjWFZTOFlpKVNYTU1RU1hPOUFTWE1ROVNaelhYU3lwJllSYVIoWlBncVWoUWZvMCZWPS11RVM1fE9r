@@ -19,18 +19,18 @@
       id3 = 0
 
       def id0( event ):
-          document.getElementById("show") = "ch1"
+          document.getElementById("show").innerHTML = "ch1"
       def id1( event ):
-          document.getElementById("show") = "ch2"
+          document.getElementById("show").innerHTML = "ch2"
       def id2( event ):
-          document.getElementById("show") = "ch3"
+          document.getElementById("show").innerHTML = "ch3"
       def id3( event ):
-          document.getElementById("show") = "ch4"
+          document.getElementById("show").innerHTML = "ch4"
       
-      document.getElementById("1").addEventListener("click", create_proxy(runPython()))
-      document.getElementById("2").addEventListener("click", create_proxy(runPython()))
-      document.getElementById("3").addEventListener("click", create_proxy(runPython()))
-      document.getElementById("4").addEventListener("click", create_proxy(runPython()))
+      document.getElementById("1").addEventListener("click", create_proxy(id0()))
+      document.getElementById("2").addEventListener("click", create_proxy(id1()))
+      document.getElementById("3").addEventListener("click", create_proxy(id2()))
+      document.getElementById("4").addEventListener("click", create_proxy(id3()))
 
     </py-script>
   </body>
