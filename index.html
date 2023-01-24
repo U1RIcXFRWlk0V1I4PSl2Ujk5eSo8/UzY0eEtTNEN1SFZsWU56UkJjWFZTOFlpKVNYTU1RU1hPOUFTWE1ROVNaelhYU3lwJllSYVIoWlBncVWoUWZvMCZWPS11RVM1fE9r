@@ -1,5 +1,6 @@
 <py-script>
   
+print("update")
 #python script begins from here
 internalCount = 0
 target = "counter-target"
@@ -21,7 +22,8 @@ def add_one():
     <p id="counter-target">Some Placeholder Text</p>
     <py-button>
       def on_click(event):
-              add_one()
+          print(event)
+          add_one()
     </py-button>
   </body>
 </html>
